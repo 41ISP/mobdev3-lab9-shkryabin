@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 100, 0.1);
+  overflow: hidden;
+}
+
+.top {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  padding: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 25px;
+  border-bottom: 1px solid #e1e5e9;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.task:hover {
+  background: #f8fafc;
+}
+
+.task:last-child {
+  border-bottom: none;
+}
+
+.task-done {
+  background: #f0f4f8;
+  opacity: 0.8;
+}
+
+.task-done .task-title {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.action-btn {
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+.action-btn span {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.action-btn span:hover {
+  transform: scale(1.1);
+}
+
+.action-btn span:first-child:hover {
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.action-btn span:last-child:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.task-input {
+  padding: 25px;
+  background: #f8fafc;
+  display: flex;
+  gap: 12px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  background: white;
+}
+
+.task-input input:focus {
+  border-color: #3b82f6;
+}
+
+.task-input button {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task {
+  animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .App {
+    border-radius: 12px;
+  }
+  
+  .top {
+    padding: 20px;
+    font-size: 1.3rem;
+  }
+  
+  .task {
+    padding: 15px 20px;
+  }
+  
+  .task-input {
+    padding: 20px;
+    flex-direction: column;
+  }
+  
+  .task-input button {
+    width: 100%;
+  }
+
+
+
+.task.editing {
+    background: #f0f9ff;
+}
+
+.edit-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #3b82f6;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    outline: none;
+    background: white;
+}
+
+
+.action-btn {
+    display: flex;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.action-btn span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.action-btn span:hover {
+    transform: scale(1.1);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+
+
+.task.editing {
+    background: #f0f9ff;
+}
+
+.edit-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-input {
+    padding: 8px 12px;
+    border: 2px solid #3b82f6;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    outline: none;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.edit-input.error {
+    border-color: #ef4444;
+}
+
+.edit-input:focus {
+    border-color: #2563eb;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    padding: 2px 8px;
+}
+
+
+.action-btn {
+    display: flex;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.action-btn span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+}
+
+.action-btn span:hover {
+    transform: scale(1.1);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+
+.action-btn span:first-child:hover {
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.action-btn span:last-child:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+
+}
